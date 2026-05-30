@@ -42,8 +42,8 @@ cleanup-commands:
   - 'mkdir -p ${FLATPAK_DEST}/mosaic/apps/d3cod3/Mosaic/bin/data/tmp'
 modules:
 # openFrameworks dependencies
-  - "shared-modules/glu/glu-9.json"
-  - "shared-modules/glew/glew.json"
+  #- "shared-modules/glu/glu-9.json"
+  #- "shared-modules/glew/glew.json"
   #- "shared-modules/gtk2/gtk2.json"
   #- "shared-modules/libusb/libusb.json"
   - name: iputils
