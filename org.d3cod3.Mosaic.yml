@@ -81,8 +81,10 @@ modules:
       - "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     sources:
       - type: archive
-        url: "https://github.com/FreeGLUTProject/freeglut/releases/download/v3.4.0/freeglut-3.4.0.tar.gz"
-        sha256: 3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec
+        url: "https://github.com/freeglut/freeglut/releases/download/v3.8.0/freeglut-3.8.0.tar.gz"
+        sha256: 674dcaff25010e09e450aec458b8870d9e98c46f99538db457ab659b321d9989
+      - type: patch
+        path: patches/freeglut-egl-proto.patch
         
   - name: libxmu
     sources:
@@ -137,6 +139,7 @@ modules:
     builddir: true
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       - -DOPENCV_GENERATE_PKGCONFIG=ON
       #- -OPENCV_ENABLE_NONFREE=ON
       - -DWITH_OPENCL=ON
