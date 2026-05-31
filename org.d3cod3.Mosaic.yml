@@ -167,6 +167,8 @@ modules:
         url: https://github.com/opencv/opencv_contrib/archive/4.8.0.tar.gz
         sha256: b4aef0f25a22edcd7305df830fa926ca304ea9db65de6ccd02f6cfa5f3357dbb
         # dest: contrib
+      - type: patch
+        path: opencv-cmake.patch
 
   - name: assimp
     buildsystem: cmake-ninja
