@@ -1,7 +1,7 @@
 app-id: org.d3cod3.Mosaic
-runtime: org.gnome.Platform
-runtime-version: '49'
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
 #sdk-extensions:
 #  - org.freedesktop.Sdk.Extension.llvm18
 command: mosaic
@@ -44,7 +44,7 @@ modules:
 # openFrameworks dependencies
   - "shared-modules/glu/glu-9.json"
   - "shared-modules/glew/glew.json"
-  #- "shared-modules/gtk2/gtk2.json"
+  - "shared-modules/gtk2/gtk2.json"
   #- "shared-modules/libusb/libusb.json"
   - name: iputils
     buildsystem: meson
