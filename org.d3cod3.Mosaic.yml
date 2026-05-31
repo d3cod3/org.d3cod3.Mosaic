@@ -173,13 +173,18 @@ modules:
   - name: assimp
     buildsystem: cmake-ninja
     config-opts:
+      - -DASSIMP_BUILD_ALL_IMPORTERS_BY_DEFAULT:BOOL=NO
+      - -DASSIMP_BUILD_ALL_EXPORTERS_BY_DEFAULT:BOOL=NO
+      - -DASSIMP_BUILD_COLLADA_IMPORTER:BOOL=YES
+      - -DASSIMP_BUILD_OBJ_IMPORTER:BOOL=YES
+      -	-DASSIMP_BUILD_3MF_IMPORTER:BOOL=YES
       - -DASSIMP_BUILD_ASSIMP_TOOLS:BOOL=NO
       - -DASSIMP_BUILD_TESTS:BOOL=NO
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
-        url: https://github.com/assimp/assimp/archive/v4.1.0.tar.gz
-        sha256: 3520b1e9793b93a2ca3b797199e16f40d61762617e072f2d525fad70f9678a71
+        url: https://github.com/assimp/assimp/archive/v5.2.5.tar.gz
+        sha256: b5219e63ae31d895d60d98001ee5bb809fb2c7b2de1e7f78ceeb600063641e1a
 
   - name: rtaudio
     config-opts:
