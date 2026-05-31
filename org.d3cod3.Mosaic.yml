@@ -175,6 +175,7 @@ modules:
     config-opts:
       - -DASSIMP_BUILD_ASSIMP_TOOLS:BOOL=NO
       - -DASSIMP_BUILD_TESTS:BOOL=NO
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/assimp/assimp/archive/v4.1.0.tar.gz
@@ -214,6 +215,7 @@ modules:
       - -DGLFW_BUILD_EXAMPLES=OFF
       - -DGLFW_BUILD_TESTS=OFF
       - -DGLFW_BUILD_DOCS=OFF
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/glfw/glfw/releases/download/3.4/glfw-3.4.zip
@@ -232,8 +234,9 @@ modules:
   - name: liburiparser
     buildsystem: cmake-ninja
     config-opts:
-    - "-DURIPARSER_BUILD_DOCS=OFF"
-    - "-DURIPARSER_BUILD_TESTS=OFF"
+    - -DURIPARSER_BUILD_DOCS=OFF
+    - -DURIPARSER_BUILD_TESTS=OFF
+    - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     cleanup:
     - "/bin/uriparse"
     sources:
@@ -243,6 +246,8 @@ modules:
 
   - name: pugixml
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     build-options:
       cflags: "-fPIC"
       cxxflags: "-fPIC"
@@ -253,6 +258,8 @@ modules:
 
   - name: poco
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
     - type: archive
       url: https://github.com/pocoproject/poco/archive/poco-1.12.4-release.tar.gz
@@ -540,6 +547,7 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
       - -DBUILD_SHARED_LIBS=ON
       - -DFMT_TEST=Off
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/fmtlib/fmt/releases/download/10.2.1/fmt-10.2.1.zip
@@ -561,6 +569,7 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DEXPECTED_LITE_OPT_BUILD_TESTS=OFF
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/martinmoene/expected-lite/archive/refs/tags/v0.8.0.tar.gz
@@ -578,6 +587,7 @@ modules:
       - -DRESTINIO_DEP_LLHTTP=system
       - -DRESTINIO_DEP_FMT=system
       - -DRESTINIO_DEP_EXPECTED_LITE=system
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/Stiffstream/restinio/releases/download/v.0.7.2/restinio-0.7.2.tar.bz2
@@ -593,6 +603,7 @@ modules:
     config-opts:
       - -DCMAKE_INSTALL_PREFIX=/app
       - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       - -DBUILD_SHARED_LIBS=ON
       - -DMSGPACK_CXX17=ON
       - -DMSGPACK_BUILD_DOCS=OFF
@@ -612,6 +623,7 @@ modules:
   - name: opendht
     buildsystem: cmake-ninja
     config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       - -DBUILD_TESTING=Off
       - -DOPENDHT_DOCUMENTATION=Off
       - -DOPENDHT_PROXY_CLIENT=On
@@ -701,15 +713,6 @@ modules:
         commands:
           - sed -i -E 's/ADDON_PKG_CONFIG_LIBRARIES =(.*)opencv\s/ADDON_PKG_CONFIG_LIBRARIES =\1opencv4 /g' addons/ofxOpenCv/addon_config.mk
           - sed -i -E 's/ADDON_PKG_CONFIG_LIBRARIES =(.*)opencv$/ADDON_PKG_CONFIG_LIBRARIES =\1opencv4/g' addons/ofxOpenCv/addon_config.mk
-      #- type: patch
-      #  path: openal_fix.patch
-      #  strip-components: 0
-      #- type: patch
-      #  path: openframeworks-libsndfile.patch
-      #- type: patch
-      #  path: openframeworks-gstreamer1.20.patch
-        #path: make4.3.patch
-        #strip-components: 0
 # addons
       - type: git
         url: https://github.com/d3cod3/ofxAudioFile.git
@@ -717,8 +720,6 @@ modules:
         # tag:
         commit: 18165f92f918e9c8ba06c4570ea60998e0862088
         dest: addons/ofxAudioFile
-      #- type: patch
-      #  path: ofxAudioFile-missing-header.patch
       - type: git
         url: https://github.com/d3cod3/ofxBTrack.git
         # branch: master
