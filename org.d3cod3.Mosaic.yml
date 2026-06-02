@@ -702,7 +702,6 @@ modules:
       - mkdir /app/mosaic
       - cp -ar * /app/mosaic
     build-options:
-      cflags: -fno-builtin-sqrt
       cxxflags: -I/app/include/guile/2.2
     post-install:
       - ln -s ../mosaic/apps/d3cod3/Mosaic/bin/Mosaic /app/bin/mosaic
@@ -804,6 +803,8 @@ modules:
         # tag:
         commit: e38bbcfa0fc555dae53acff316bda7a6cb453f5c
         dest: addons/ofxPd
+      - type: patch
+        path: libpd-extra.patch
       - type: git
         url: https://github.com/d3cod3/ofxPDSP.git
         # branch: master
