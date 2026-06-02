@@ -697,10 +697,13 @@ modules:
     # subdir: libs/openFrameworksCompiled/project
     build-commands:
       - cd libs/openFrameworksCompiled/project && make -j$FLATPAK_BUILDER_N_JOBS
-      - cd apps/d3cod3/Mosaic && make -j$FLATPAK_BUILDER_N_JOBS CXXFLAGS=-I/app/include/guile/2.2 CFLAGS=-fno-builtin-sqrt
+      - cd apps/d3cod3/Mosaic && make -j$FLATPAK_BUILDER_N_JOBS
       # debug - cd apps/d3cod3/Mosaic && make CXXFLAGS='-g -O2' -j$FLATPAK_BUILDER_N_JOBS Debug
       - mkdir /app/mosaic
       - cp -ar * /app/mosaic
+    build-options:
+      cflags: -fno-builtin-sqrt
+      cxxflags: -I/app/include/guile/2.2
     post-install:
       - ln -s ../mosaic/apps/d3cod3/Mosaic/bin/Mosaic /app/bin/mosaic
       - install -Dm644 org.d3cod3.Mosaic.appdata.xml /app/share/appdata/org.d3cod3.Mosaic.appdata.xml
