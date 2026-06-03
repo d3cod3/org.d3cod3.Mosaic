@@ -1,7 +1,7 @@
 app-id: org.d3cod3.Mosaic
-runtime: org.freedesktop.Platform
-runtime-version: '25.08'
-sdk: org.freedesktop.Sdk
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
 #sdk-extensions:
 #  - org.freedesktop.Sdk.Extension.llvm18
 command: mosaic
