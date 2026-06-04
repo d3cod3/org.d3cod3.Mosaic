@@ -2,8 +2,6 @@ app-id: org.d3cod3.Mosaic
 runtime: org.gnome.Platform
 runtime-version: '50'
 sdk: org.gnome.Sdk
-#sdk-extensions:
-#  - org.freedesktop.Sdk.Extension.llvm18
 command: mosaic
 finish-args:
   # X11 + XShm access
@@ -27,18 +25,11 @@ finish-args:
   - --filesystem=xdg-run/pipewire-0
 # - --filesystem=xdg-pictures
 # - --filesystem=xdg-videos
+  - --env=LD_LIBRARY_PATH=/app/lib # required for linking stand-alone programs
 cleanup:
   - '/lib/jack'
   - '/lib/libjack*'
-#add-extensions:
-#    org.freedesktop.Platform.ffmpeg-full:
-#      directory: lib/ffmpeg
-#      version: '23.08'
-#      add-ld-path: '.'
-#      no-autodownload: true
-#      autodelete: false
 cleanup-commands:
-  #- 'mkdir -p ${FLATPAK_DEST}/lib/ffmpeg'
   - 'mkdir -p ${FLATPAK_DEST}/mosaic/apps/d3cod3/Mosaic/bin/data/tmp'
 modules:
 # openFrameworks dependencies
