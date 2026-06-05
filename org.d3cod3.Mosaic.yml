@@ -675,13 +675,13 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://ftp.gnu.org/pub/gnu/binutils/binutils-2.46.0.tar.gz
-        sha256: 8608fe44ab7de645f6ad0a898313b75338842490d609adb85c9fb2827c376af2
+        url: https://ftp.gnu.org/gnu/binutils/binutils-with-gold-2.46.tar.gz
+        sha256: 0b4049732e60f274bd1ee5cfb45ba9434a7e2846fa7606fca1a4e4d9251eff5e
         x-checker-data:
           type: anitya
           project-id: 7981
           stable-only: true
-          url-template: https://ftp.gnu.org/pub/gnu/binutils/binutils-$version.tar.gz
+          url-template: https://ftp.gnu.org/pub/gnu/binutils/binutils-with-gold-$version.tar.gz
   
   # Mosaic/openframeworks
   - name: openframeworks
