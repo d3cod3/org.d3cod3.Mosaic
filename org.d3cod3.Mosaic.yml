@@ -682,6 +682,8 @@ modules:
           project-id: 7981
           stable-only: true
           url-template: https://ftp.gnu.org/pub/gnu/binutils/binutils-with-gold-$version.tar.gz
+    post-install:
+      - install -Dm755 binutils/ld /app/bin/ld
     cleanup: ['*']
   
   # Mosaic/openframeworks
