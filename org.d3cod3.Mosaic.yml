@@ -668,23 +668,6 @@ modules:
     cleanup:
       - /bin
       - /lib/libguile-2.2.so.1.4.2-gdb.scm
-
-  # binutils for gold linker
-  - name: binutils
-    buildsystem: autotools
-    builddir: true
-    sources:
-      - type: archive
-        url: https://ftp.gnu.org/gnu/binutils/binutils-with-gold-2.46.tar.gz
-        sha256: 4b4c189824b9c3ae483e056ade8d5265e876aea1dedd76dc3ca81bad77b02f03
-        x-checker-data:
-          type: anitya
-          project-id: 7981
-          stable-only: true
-          url-template: https://ftp.gnu.org/pub/gnu/binutils/binutils-with-gold-$version.tar.gz
-    post-install:
-      - install -Dm755 binutils/ld /app/bin/ld
-    cleanup: ['*']
   
   # Mosaic/openframeworks
   - name: openframeworks
@@ -713,7 +696,7 @@ modules:
 # openframeworks
       - type: archive
         url: https://www.d3cod3.org/downloads/of_v0.12.0_linux64gcc6_release_Mosaic.tar.gz
-        sha256: bc88fd8d359aa51f5224d5077d41f4c28d4e83c8f818fbffb3d073c8a76a8bc9
+        sha256: 9c23b8919f0007fbf0630be04c1f938debc350667aff594bb061dba03bf66011
 # use openCV 4
       - type: shell
         commands:
