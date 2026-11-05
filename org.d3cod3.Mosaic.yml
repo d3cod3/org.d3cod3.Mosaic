@@ -401,7 +401,7 @@ modules:
           type: html
           url: https://www.videolan.org/developers/libdvdnav.html
           version-pattern: The latest version of <code>libdvdread</code> is <b>([\d\-\.]+)<
-          url-template: https://download.videolan.org/pub/videolan/libdvdread/$version/libdvdread-$version.tar.bz2
+          url-template: https://download.videolan.org/pub/videolan/libdvdread/$version/libdvdread-$version.tar.xz
 
   - name: libmpeg2
     config-opts:
